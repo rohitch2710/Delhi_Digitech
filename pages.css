@@ -1,0 +1,101 @@
+/* Common styles for both pages */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  box-sizing: border-box;
+}
+
+/* Global Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f1f1f1;
+}
+
+.box {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern Typography */
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Button Styling */
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+/* Success Page Background */
+.success-page {
+  background: linear-gradient(to bottom right, #0d8a2b, #38b24b);
+}
+
+.success .btn {
+  background-color: #38b24b;
+}
+
+.success .btn:hover {
+  background-color: #2a7d34;
+}
+
+/* Error Page Background */
+.error-page {
+  background: linear-gradient(to bottom right, #ff4c4c, #ff736a);
+}
+
+.error .btn {
+  background-color: #ff4c4c;
+}
+
+.error .btn:hover {
+  background-color: #e04040;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .box {
+    padding: 30px 40px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+}

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1800" height="2200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 2200">
+  <style>
+    .border { fill:none; stroke:#000; stroke-width:1.5; }
+    .state-label { font-family:Arial,sans-serif; font-size:24px; fill:#000;}
+    .capital-label { font-family:Arial,sans-serif; font-size:18px; fill:#b00;}
+  </style>
+
+  <g id="india-map">
+    <path class="border" d="M..." />
+  </g>
+
+  <text x="820" y="300" class="state-label">Jammu & Kashmir</text>
+  <text x="820" y="330" class="capital-label">Srinagar</text>
+  <text x="820" y="380" class="state-label">Himachal Pradesh</text>
+  <text x="820" y="410" class="capital-label">Shimla</text>
+  <text x="780" y="470" class="state-label">Punjab</text>
+  <text x="780" y="500" class="capital-label">Chandigarh</text>
+  <text x="900" y="470" class="state-label">Haryana</text>
+  <text x="900" y="500" class="capital-label">Chandigarh</text>
+  <text x="860" y="540" class="state-label">Uttarakhand</text>
+  <text x="860" y="570" class="capital-label">Dehradun</text>
+  <text x="900" y="620" class="state-label">Uttar Pradesh</text>
+  <text x="900" y="650" class="capital-label">Lucknow</text>
+  <text x="1000" y="700" class="state-label">Bihar</text>
+  <text x="1000" y="730" class="capital-label">Patna</text>
+  <text x="700" y="800" class="state-label">Rajasthan</text>
+  <text x="700" y="830" class="capital-label">Jaipur</text>
+  <text x="1150" y="800" class="state-label">West Bengal</text>
+  <text x="1150" y="830" class="capital-label">Kolkata</text>
+  <text x="1300" y="900" class="state-label">Assam</text>
+  <text x="1300" y="930" class="capital-label">Dispur</text>
+  <text x="1350" y="820" class="state-label">Arunachal Pradesh</text>
+  <text x="1350" y="850" class="capital-label">Itanagar</text>
+  <text x="1270" y="860" class="state-label">Nagaland</text>
+  <text x="1270" y="890" class="capital-label">Kohima</text>
+  <text x="1230" y="930" class="state-label">Manipur</text>
+  <text x="1230" y="960" class="capital-label">Imphal</text>
+  <text x="1300" y="990" class="state-label">Mizoram</text>
+  <text x="1300" y="1020" class="capital-label">Aizawl</text>
+  <text x="1200" y="970" class="state-label">Tripura</text>
+  <text x="1200" y="1000" class="capital-label">Agartala</text>
+  <text x="1170" y="900" class="state-label">Meghalaya</text>
+  <text x="1170" y="930" class="capital-label">Shillong</text>
+  <text x="1100" y="930" class="state-label">Sikkim</text>
+  <text x="1100" y="960" class="capital-label">Gangtok</text>
+  <text x="850" y="1000" class="state-label">Madhya Pradesh</text>
+  <text x="850" y="1030" class="capital-label">Bhopal</text>
+  <text x="650" y="1100" class="state-label">Chhattisgarh</text>
+  <text x="650" y="1130" class="capital-label">Raipur</text>
+  <text x="700" y="1200" class="state-label">Maharashtra</text>
+  <text x="700" y="1230" class="capital-label">Mumbai</text>
+  <text x="600" y="1300" class="state-label">Gujarat</text>
+  <text x="600" y="1330" class="capital-label">Gandhinagar</text>
+  <text x="900" y="1300" class="state-label">Karnataka</text>
+  <text x="900" y="1330" class="capital-label">Bengaluru</text>
+  <text x="1000" y="1420" class="state-label">Andhra Pradesh</text>
+  <text x="1000" y="1450" class="capital-label">Amaravati</text>
+  <text x="1150" y="1500" class="state-label">Telangana</text>
+  <text x="1150" y="1530" class="capital-label">Hyderabad</text>
+  <text x="1200" y="1600" class="state-label">Tamil Nadu</text>
+  <text x="1200" y="1630" class="capital-label">Chennai</text>
+  <text x="1300" y="1650" class="state-label">Kerala</text>
+  <text x="1300" y="1680" class="capital-label">Thiruvananthapuram</text>
+  <text x="900" y="1550" class="state-label">Odisha</text>
+  <text x="900" y="1580" class="capital-label">Bhubaneswar</text>
+  <text x="1000" y="1400" class="state-label">Goa</text>
+  <text x="1000" y="1430" class="capital-label">Panaji</text>
+  <text x="850" y="350" class="state-label">Delhi (UT)</text>
+  <text x="850" y="380" class="capital-label">New Delhi</text>
+  <text x="1100" y="100" class="state-label">Ladakh (UT)</text>
+  <text x="1100" y="130" class="capital-label">Leh</text>
+  <text x="1300" y="300" class="state-label">Lakshadweep (UT)</text>
+  <text x="1300" y="330" class="capital-label">Kavaratti</text>
+  <text x="1450" y="1100" class="state-label">Andaman & Nicobar (UT)</text>
+  <text x="1450" y="1130" class="capital-label">Port Blair</text>
+  <text x="600" y="400" class="state-label">Dadra & Nagar Haveli & Daman & Diu (UT)</text>
+  <text x="600" y="430" class="capital-label">Daman</text>
+  <text x="550" y="800" class="state-label">Puducherry (UT)</text>
+  <text x="550" y="830" class="capital-label">Puducherry</text>
+</svg>
