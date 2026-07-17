@@ -491,5 +491,3 @@ function slide(){
 }
 
 setInterval(slide,3000);
-
-      /*-- SLIDE --*/
