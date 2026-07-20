@@ -63,12 +63,19 @@ section {
   top: 0;
   width: 100%;
   z-index: 1000;
-  height: 110px;
+  height: 140px;
   padding: 0;
   background: transparent;
   transition: 0.3s ease;
   overflow: visible;
 }
+
+.nav-link {
+    font-size: 28px;      
+    font-weight: 600;     
+    padding: 10px 15px;   
+}
+
 
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.96);
@@ -77,14 +84,12 @@ section {
 }
 
 .nav-container {
-  max-width: 1400px;
-  margin: auto;
-  padding-left: 12px;
-  padding-right: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+    width: 95%;
+    max-width: 1600px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 /* Mobile */
 @media (max-width: 768px) {
@@ -96,28 +101,30 @@ section {
 
 /* Logo */
 .nav-logo img {
-  max-height: 95px; /* restore original size */
-  width: auto;
-  max-width: 180px;
+  width: 135px;          
+  height: auto;
   object-fit: contain;
   transition: all 0.3s ease;
   display: block;
   cursor: pointer;
-  /* margin-top: -6px; */
 }
+
+
 @media (max-width: 768px) {
   .nav-logo img {
-    max-height: 60px;
-    max-width: 150px;
+    width: 120px;     
+    height: auto;
+    max-width: none;
+    max-height: none;
   }
 }
 
-/* Menu container */
 .nav-menu-container {
   position: relative;
   display: flex;
   align-items: center;
 }
+
 
 /* ================= DOTS MENU ================= */
 .menu-dots {
@@ -140,6 +147,13 @@ section {
   background: #333;
 }
 
+.hero {
+    padding-top: 130px; 
+}
+
+.nav-logo img {
+    margin-top: 10px;
+}
 /* ================= DROPDOWN MENU ================= */
 .nav-menu {
   position: absolute;
@@ -184,7 +198,7 @@ section {
   .menu-dots {
     display: none;
   }
-  /* Desktop menu layout */
+
   .nav-menu {
     position: static;
     display: flex;
@@ -199,7 +213,7 @@ section {
     padding: 8px 0;
   }
 
-  /* Hover color only */
+
   .nav-menu li a:hover {
     color: #4a6cf7;
     background: transparent !important;
@@ -224,6 +238,11 @@ section {
   padding-top: 140px;
   padding-bottom: 110px;
 }
+.hero-container {
+    position: relative;
+    top: 100px;
+}
+
 
 /* ================= BACKGROUND SHAPES ================= */
 
@@ -449,8 +468,8 @@ section {
   transform: scale(1.4);
 }
 .slider-dots .dot:hover {
-  background: #ff3b30; /* Changes dot color on hover */
-  transform: scale(1.4); /* Increases dot size on hover */
+  background: #ff3b30; 
+  transform: scale(1.4); 
 }
 
 /* ================= RESPONSIVE ================= */
@@ -565,7 +584,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 200px; /* controls image vertical position */
+  height: 200px; 
 }
 
 /* Horizontal scrolling */
@@ -672,6 +691,13 @@ body {
   }
 }
 
+.service-text {
+    display: block;
+    max-width: 140px;      
+    line-height: 1.8;      
+    white-space: normal;
+    word-break: break-word;
+}
 /* ================= PREMIUM CLIENTS ================= */
 .clients {
   padding: 80px 20px;
@@ -792,7 +818,7 @@ body {
   }
 
   .automotive .client img {
-    width: 108px; /* was ~90px → +20% */
+    width: 108px; 
     height: auto;
   }
 }
@@ -920,7 +946,7 @@ body {
 
 @media (max-width: 576px){
     .technology-grid{
-        grid-template-columns: 1fr;   /* One card per row */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
@@ -1113,7 +1139,7 @@ body {
 /* Grid Layout */
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr)); /* 🔥 always one row */
+  grid-template-columns: repeat(5, minmax(0, 1fr)); 
   gap: 30px;
   max-width: 1400px;
   margin: 0 auto;
@@ -1404,7 +1430,7 @@ body {
 }
 @media (min-width: 1200px) {
   .india-map-wrapper {
-    max-height: 600px; /* or whatever looks good */
+    max-height: 600px;
   }
 }
 
@@ -2164,7 +2190,7 @@ body {
   width: 100%;
 }
 
-/* Divider between legal links */
+
 .footer-legal a:not(:last-child)::before {
   content: "•";
   position: absolute;
@@ -2785,7 +2811,7 @@ body {
     position:relative;
     overflow:hidden;
 
-    height:650px;          /* Fixed height */
+    height:650px;         
     border-radius:20px;
     background:#fff;
     box-shadow:0 15px 40px rgba(0,0,0,.08);
@@ -2822,7 +2848,7 @@ body {
 
 /* Icon size */
 .service-box .icon{
-    width: 80px;      /* Adjust as needed */
+    width: 80px;    
     height: 80px;
     object-fit: contain;
     margin-bottom: 25px;
@@ -2833,7 +2859,7 @@ body {
     font-size: 20px;
     font-weight: 600;
     line-height: 1.4;
-    min-height: 60px;      /* Keeps all headings aligned */
+    min-height: 60px;    
     margin-bottom: 20px;
 }
 
@@ -2863,7 +2889,7 @@ body {
     flex-direction: column;
     align-items: center;
 
-    min-height: 320px;   /* Same height for every card */
+    min-height: 320px;   
 }
 
 /* Same icon area for every card */
