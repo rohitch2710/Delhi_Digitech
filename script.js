@@ -448,46 +448,238 @@ const totalCards = wrapper.children.length;
 let activeIndex = 0;
 
 // Create one dot per original card
-for(let i = 0; i < totalCards; i++){
-    const dot = document.createElement("span");
-    if(i === 0) dot.classList.add("active");
-    dotsContainer.appendChild(dot);
-}
+// for(let i = 0; i < totalCards; i++){
+//     const dot = document.createElement("span");
+//     if(i === 0) dot.classList.add("active");
+//     dotsContainer.appendChild(dot);
+// }
 
-const dots = document.querySelectorAll(".service-dots span");
+// const dots = document.querySelectorAll(".service-dots span");
 
-function updateDots(){
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[activeIndex].classList.add("active");
-}
+// function updateDots(){
+//     dots.forEach(dot => dot.classList.remove("active"));
+//     dots[activeIndex].classList.add("active");
+// }
 
-function slide(){
+// function slide(){
 
-    const firstCard = wrapper.firstElementChild;
-    const cardWidth = firstCard.offsetWidth;
+//     const firstCard = wrapper.firstElementChild;
+//     const cardWidth = firstCard.offsetWidth;
 
-    wrapper.style.transition = "transform .5s ease";
-    wrapper.style.transform = `translateX(-${cardWidth}px)`;
+//     wrapper.style.transition = "transform .5s ease";
+//     wrapper.style.transform = `translateX(-${cardWidth}px)`;
 
-    wrapper.addEventListener("transitionend", function handler(){
+//     wrapper.addEventListener("transitionend", function handler(){
 
-        wrapper.style.transition = "none";
-        wrapper.style.transform = "translateX(0)";
+//         wrapper.style.transition = "none";
+//         wrapper.style.transform = "translateX(0)";
 
-        wrapper.appendChild(firstCard);
+//         wrapper.appendChild(firstCard);
 
-        activeIndex++;
+//         activeIndex++;
 
-        if(activeIndex >= totalCards){
-            activeIndex = 0;
-        }
+//         if(activeIndex >= totalCards){
+//             activeIndex = 0;
+//         }
 
-        updateDots();
+//         updateDots();
 
-        wrapper.removeEventListener("transitionend", handler);
+//         wrapper.removeEventListener("transitionend", handler);
+
+//     });
+
+// }
+
+// setInterval(slide,3000);
+
+
+// const serviceWrapper = document.querySelector(".cards-wrapper");
+// const serviceCards = document.querySelectorAll(".cards-wrapper .service-card");
+// const serviceDotsContainer = document.querySelector(".service-dots");
+
+// if (serviceWrapper && serviceCards.length && serviceDotsContainer) {
+
+//     let serviceCurrentIndex = 0;
+//     const gap = 20;
+
+//     function getCardWidth() {
+//         return serviceCards[0].offsetWidth + gap;
+//     }
+
+//     function getVisibleCards() {
+//         return Math.floor(
+//             document.querySelector(".slider-container").offsetWidth /
+//             getCardWidth()
+//         );
+//     }
+
+//     function getMaxIndex() {
+//         return serviceCards.length - getVisibleCards();
+//     }
+
+//     // Create dots
+//     serviceDotsContainer.innerHTML = "";
+
+//     for (let i = 0; i <= getMaxIndex(); i++) {
+//         const dot = document.createElement("span");
+//         dot.dataset.index = i;
+//         serviceDotsContainer.appendChild(dot);
+//     }
+
+//     const serviceDots = serviceDotsContainer.querySelectorAll("span");
+
+//     function updateServiceSlider() {
+
+//         serviceWrapper.style.transition = "transform .5s ease";
+//         serviceWrapper.style.transform =
+//             `translateX(-${serviceCurrentIndex * getCardWidth()}px)`;
+
+//         serviceDots.forEach(dot => dot.classList.remove("active"));
+//         serviceDots[serviceCurrentIndex]?.classList.add("active");
+//     }
+
+//     // Dot click
+//     serviceDots.forEach(dot => {
+
+//         dot.addEventListener("click", () => {
+
+//             serviceCurrentIndex = Number(dot.dataset.index);
+
+//             updateServiceSlider();
+
+//             resetAuto();
+
+//         });
+
+//     });
+
+//     function autoSlide() {
+
+//         if (serviceCurrentIndex < getMaxIndex()) {
+//             serviceCurrentIndex++;
+//         } else {
+//             serviceCurrentIndex = 0;
+//         }
+
+//         updateServiceSlider();
+
+//     }
+
+//     let interval = setInterval(autoSlide, 3000);
+
+//     function resetAuto() {
+//         clearInterval(interval);
+//         interval = setInterval(autoSlide, 3000);
+//     }
+
+//     window.addEventListener("resize", updateServiceSlider);
+
+//     updateServiceSlider();
+
+// }
+// ================= SERVICES SLIDER =================
+document.addEventListener("DOMContentLoaded", () => {
+
+    const wrapper = document.querySelector(".cards-wrapper");
+    const dotsContainer = document.querySelector(".service-dots");
+
+    if (!wrapper || !dotsContainer) return;
+
+    // Save original order
+    const originalCards = [...wrapper.children];
+
+    // Restore original order
+    wrapper.innerHTML = "";
+    originalCards.forEach(card => wrapper.appendChild(card));
+
+    let totalCards = originalCards.length;
+    let activeIndex = 0;
+    let autoSlide;
+
+    // ------------------------
+    // Create Dots
+    // ------------------------
+    dotsContainer.innerHTML = "";
+
+    for (let i = 0; i < totalCards; i++) {
+        const dot = document.createElement("span");
+        if (i === 0) dot.classList.add("active");
+        dotsContainer.appendChild(dot);
+    }
+
+    const dots = dotsContainer.querySelectorAll("span");
+
+    function updateDots() {
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[activeIndex].classList.add("active");
+    }
+
+    function slide() {
+
+        const firstCard = wrapper.firstElementChild;
+
+        const style = window.getComputedStyle(wrapper);
+        const gap = parseFloat(style.gap || style.columnGap || 0);
+
+        const moveWidth = firstCard.offsetWidth + gap;
+
+        wrapper.style.transition = "transform .5s ease";
+        wrapper.style.transform = `translateX(-${moveWidth}px)`;
+
+        wrapper.addEventListener("transitionend", function handler() {
+
+            wrapper.style.transition = "none";
+            wrapper.style.transform = "translateX(0)";
+
+            wrapper.appendChild(firstCard);
+
+            activeIndex = (activeIndex + 1) % totalCards;
+            updateDots();
+
+        }, { once: true });
+
+    }
+
+    // ------------------------
+    // Dot Click
+    // ------------------------
+    dots.forEach((dot, index) => {
+
+        dot.addEventListener("click", () => {
+
+            clearInterval(autoSlide);
+
+            // Restore original order
+            wrapper.innerHTML = "";
+            originalCards.forEach(card => wrapper.appendChild(card));
+
+            // Rotate cards
+            for (let i = 0; i < index; i++) {
+                wrapper.appendChild(wrapper.firstElementChild);
+            }
+
+            activeIndex = index;
+            updateDots();
+
+            wrapper.style.transition = "none";
+            wrapper.style.transform = "translateX(0)";
+
+            autoSlide = setInterval(slide, 3000);
+
+        });
 
     });
 
-}
+    // ------------------------
+    // Reset on Resize
+    // ------------------------
+    window.addEventListener("resize", () => {
+        wrapper.style.transition = "none";
+        wrapper.style.transform = "translateX(0)";
+    });
 
-setInterval(slide,3000);
+    updateDots();
+
+    autoSlide = setInterval(slide, 3000);
+
+});

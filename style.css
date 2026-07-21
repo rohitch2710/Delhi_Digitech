@@ -70,13 +70,6 @@ section {
   overflow: visible;
 }
 
-.nav-link {
-    font-size: 28px;      
-    font-weight: 600;     
-    padding: 10px 15px;   
-}
-
-
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(10px);
@@ -84,13 +77,14 @@ section {
 }
 
 .nav-container {
-    width: 95%;
-    max-width: 1600px; 
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 95%;
+  max-width: 1600px; 
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 /* Mobile */
 @media (max-width: 768px) {
   .nav-container {
@@ -107,8 +101,8 @@ section {
   transition: all 0.3s ease;
   display: block;
   cursor: pointer;
+  margin-top: 10px;
 }
-
 
 @media (max-width: 768px) {
   .nav-logo img {
@@ -124,7 +118,6 @@ section {
   display: flex;
   align-items: center;
 }
-
 
 /* ================= DOTS MENU ================= */
 .menu-dots {
@@ -148,18 +141,9 @@ section {
 }
 
 .hero {
-    padding-top: 130px; 
+  padding-top: 130px; 
 }
 
-.nav-logo img {
-    margin-top: 10px;
-}
-/* .service-grids{
-  text-align:justify;
-}
-#Business{
-  text-align: justify;
-} */
 /* ================= DROPDOWN MENU ================= */
 .nav-menu {
   position: absolute;
@@ -181,21 +165,22 @@ section {
   display: flex;
 }
 
-.nav-menu li a {
+
+.nav-menu li a,
+.nav-link {
+  font-size: 21px; /* Applied text size */
+  font-weight: 600;
   padding: 12px 20px;
   display: block;
   color: #000;
   text-decoration: none;
-  font-size: 15px;
-  transition: 0.2s ease;
+  transition: color 0.25s ease;
+  background: transparent;
 }
+
 /* Active link */
 .nav-link.active {
   color: #4a6cf7;
-}
-.nav-menu li a {
-  transition: color 0.25s ease;
-  background: transparent;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -218,7 +203,6 @@ section {
   .nav-menu li a {
     padding: 8px 0;
   }
-
 
   .nav-menu li a:hover {
     color: #4a6cf7;
@@ -667,6 +651,38 @@ body {
   height: auto;
   justify-content: flex-start;
   padding: 24px;
+  box-sizing: border-box;
+}
+@media (max-width:768px){
+
+    .slider-container{
+        width:100%;
+        overflow:hidden;
+        padding:0 15px 70px;
+        box-sizing:border-box;
+    }
+
+    .cards-wrapper{
+        display:flex;
+        gap:0 !important;
+        width:auto !important;
+    }
+
+    .service-card,
+    .left-card{
+        flex:0 0 100%;
+        min-width:100%;
+        max-width:100%;
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    .service-dots{
+        margin-top:20px;
+        display:flex;
+        justify-content:center;
+    }
+
 }
 
 .left-card h2 {
@@ -701,15 +717,32 @@ body {
   transform: translateY(-50%) scale(1.1);
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
-  .service-card {
+
+  /* Normal service cards */
+  .service-card:not(.left-card) {
     min-width: 260px;
     max-width: 260px;
     height: 330px;
   }
-}
 
+  /* Intro card */
+  .left-card {
+    min-width: 260px;
+    max-width: 260px;
+
+    height: auto;
+    min-height: 430px;   /* adjust if needed */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+}
 .service-text {
     display: block;
     max-width: 140px;      
@@ -1429,6 +1462,7 @@ body {
   .case-left,
   .case-text-wrapper {
     flex: 1 1 100%;
+    padding-left: 15px;
   }
   #indiaMap {
     height: 350px;
@@ -3128,3 +3162,4 @@ body {
         font-size: 15px;
     }
 }
+
